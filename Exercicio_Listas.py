@@ -50,6 +50,11 @@ colocacao.extend([enquete.count(1), enquete.count(2), enquete.count(3), enquete.
 
 for item in colocacao:
     percentual.append(item/sum(colocacao)*100)
+    
+maior = max(colocacao)
+for ind, valor in enumerate(colocacao):
+    if valor == maior:
+        ind_maioria_votos = ind
 
 print('\nSistema Operacional\tVotos\t%')
 print('---------------------\t-----\t---')
@@ -61,3 +66,5 @@ for i in range(6):
     
 print('---------------------\t-----\n')
 print(f'Total\t\t\t{sum(colocacao)}\n')
+print(f'O Sistema Operacional mais votado foi o {SOs[ind_maioria_votos]}, com {colocacao[ind_maioria_votos]} \
+votos, correspondendo a {int(percentual[ind_maioria_votos])}% dos votos.')
